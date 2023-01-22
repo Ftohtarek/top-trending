@@ -1,0 +1,32 @@
+<div class="row justify-content-center">
+    <form [formGroup]='registerForm' (ngSubmit)="register()" class="col-md-10">
+        <h2></h2>
+        <div class="my-3">
+            <label class="my-1" for="fristName"> Frist Name :</label>
+            <input type="text" id="fristName" formControlName="first_name" class="form-control">
+            <div *ngIf="registerForm.controls.first_name.invalid&&registerForm.controls.first_name.touched"
+                class="text-danger my-2">
+                InValid
+            </div>
+        </div>
+        <div class="my-3">
+            <label class="my-1" for="lastName"> Last Name :</label>
+            <input type="text" id="lastName" formControlName="last_name" class="form-control">
+            <div *ngIf="registerForm.controls.last_name.invalid&&registerForm.controls.last_name.touched"
+                class="text-danger my-2"> InValid</div>
+        </div>
+        <div class="my-3">
+            <label class="my-1" for="email"> Email :</label>
+            <input type="email" id="email" formControlName="email" class="form-control">
+            <div *ngIf="registerForm.controls.email.invalid&&registerForm.controls.email.touched"
+                class="text-danger my-2">InValid</div>
+        </div>
+        <div class="my-3">
+            <label class="my-1" for="pass"> Password :</label>
+            <input type="password" id="pass" formControlName="password" class="form-control">
+            <div *ngIf="registerForm.controls.password.invalid&&registerForm.controls.password.touched"
+                class="text-danger my-2">InValid</div>
+        </div>
+        <button [disabled]='registerForm.invalid'  class="btn btn-primary float-end w-25">Register</button>
+    </form>
+</div>

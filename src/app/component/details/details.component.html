@@ -1,0 +1,25 @@
+<div class="row mt-2">
+    <div class="col-md-4">
+        <div class="img-container">
+            <img src="https://image.tmdb.org/t/p/original{{movieData.poster_path}}" class="rounded">
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <div class="caption mt-4">
+            <h1>{{movieData.original_name}} {{movieData.title}}</h1>
+            <p class="desc">{{movieData.tagline}}</p>
+            <div class="d-flex">
+                <p class="slug" *ngFor="let genres of movieData.genres">
+                    {{genres.name}}</p>
+            </div>
+            <div class="py-1">
+                <div class="vote">Vote :<span> {{movieData.vote_average}}</span></div>
+                <div class="vote">Vote count :<span> {{movieData.vote_count}}</span></div>
+                <div class="vote">popularity :<span> {{movieData.popularity}}</span></div>
+                <div class="vote">release Date :<span> {{movieData.release_date}}</span></div>
+            </div>
+            <p class="desc ">{{movieData.overview}}</p>
+        </div>
+    </div>
+</div>

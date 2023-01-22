@@ -1,0 +1,24 @@
+<div class="row justify-content-center">
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="col-md-10">
+        <div class="my-2">
+            <label for="email" class="my-1">Email :</label>
+            <input type="email" class="form-control" formControlName='email'>
+            <div *ngIf='loginForm.controls.email.invalid&&loginForm.controls.email.touched' class="text-danger my-1">
+                INVALID
+            </div>
+        </div>
+        <div class="my-2">
+            <label for="password" class="my-1">Password :</label>
+            <input type="password" class="form-control" formControlName='password'>
+            <div class="text-danger my-1"
+                *ngIf='loginForm.controls.password.invalid&&loginForm.controls.password.touched'>
+                INVALID
+            </div>
+        </div>
+        <div class="form-control popupAlert text-danger my-2"  [style.display]="popup?'block':'none'">
+            {{ErrorMassage}}
+        </div>
+        <button [disabled]='loginForm.invalid' class="w-25 float-end btn btn-primary my-1">Login</button>
+        
+    </form>
+</div>

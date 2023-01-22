@@ -1,0 +1,23 @@
+<nav id="searchNav" [ngClass]="view?'open':'close'">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="form-group col-lg-4 col-md-6 col-9">
+                <input (keyup)='getMovie($event)' type="" name="search" class="form-control my-3"
+                    placeholder="Search By Movie Name ">
+            </div>
+        </div>
+    </div>
+
+    <div class="searchField shadow-sm rounded my-2">
+        <div class="row">
+            <a class="col-lg-2 col-md-4 col-6" *ngFor='let item of movieApi'
+                routerLink='/details/{{item.media_type}}/{{item.id}}'>
+                <div class="trendingMovies pb-4">
+                    <div class="rating">{{item.vote_average}}</div>
+                    <img src="https://image.tmdb.org/t/p/original{{item.poster_path}}" class="img-fluid">
+                    <h3>{{item.title}}</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+</nav>

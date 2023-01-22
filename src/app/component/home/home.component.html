@@ -1,0 +1,36 @@
+<app-search></app-search>
+<div class="row pb-5">
+    <div class="col-lg-4 col-md-4">
+        <div class="caption">
+            <div class="bdrTop"></div>
+            <h2 class="py-4">Trending <br> movie <br> to watch now</h2>
+            <p>most watched movie by days</p>
+            <div class="bdrBottom"></div>
+        </div>
+    </div>
+    <a class="col-lg-2 col-md-4 " *ngFor='let item of movieApi' routerLink='/details/{{item.media_type}}/{{item.id}}'>
+        <div class="trendingMovies pb-4">
+            <div class="rating">{{item.vote_average}}</div>
+            <img src="https://image.tmdb.org/t/p/original{{item.poster_path}}" class="img-fluid">
+            <h3>{{item.title}}</h3>
+        </div>
+    </a>
+</div>
+
+<div class="row py-5">
+    <div class="col-lg-4 col-md-4">
+        <div class="caption">
+            <div class="bdrTop"></div>
+            <h2 class="py-4">Trending <br> Tv <br> to watch now</h2>
+            <p>most watched movie by days</p>
+            <div class="bdrBottom"></div>
+        </div>
+    </div>
+    <a class="col-lg-2 col-md-4 " *ngFor='let item of tvApi' routerLink='/details/{{item.media_type}}/{{item.id}}'>
+        <div class="trendingMovies pb-4">
+            <div class="rating">{{item.vote_average}}</div>
+            <img src="https://image.tmdb.org/t/p/original{{item.poster_path}}" class="img-fluid">
+            <h3>{{item.name}}</h3>
+        </div>
+    </a>
+</div>

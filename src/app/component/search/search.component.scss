@@ -1,0 +1,28 @@
+#searchNav{
+    transition: all .5s;
+    input{
+        background-color: transparent;
+        border-color:transparent ;
+        border-bottom: 1px solid white;
+        color: white;
+    }
+    .searchField{   
+        padding: 0 5vw;
+    }
+    overflow: auto;
+}
+.open{
+    top: 0;
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-color: rgba(0,0,0,.91);
+    padding: 10px;
+}
+.close{
+    position: static;
+    height: auto;
+    background-color: transparent;
+}

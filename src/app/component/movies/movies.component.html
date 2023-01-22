@@ -1,0 +1,10 @@
+<app-search></app-search>
+<div class="row">
+    <a class="col-md-2" *ngFor='let movie of movies' routerLink='/details/movie/{{movie.id}}'>
+        <div class="trendingMovies pb-4 rounded overflow-hidden" >
+            <div class="rating rounded">{{movie.vote_average}}</div>
+            <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" class="img-fluid">
+            <h3>{{movie.title}}{{movie.name}} </h3>
+        </div>
+    </a>
+</div>

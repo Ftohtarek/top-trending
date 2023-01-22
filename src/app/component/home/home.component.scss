@@ -1,0 +1,14 @@
+@import '../../../styles.scss';
+@mixin bdr($width){
+    width: $width;
+    height:$borderHeight;
+    background-color: $borderColor;
+}
+.caption{
+    .bdrTop{
+        @include bdr(25%);
+    }
+    .bdrBottom{
+        @include bdr(100%);
+    }
+}

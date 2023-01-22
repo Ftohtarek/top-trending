@@ -1,0 +1,12 @@
+@import '../../../styles.scss';
+.navbar{
+    .nav-link{
+        color:$fontColor
+    }
+    .social-media i {
+        margin: 10px;
+    }
+    a{
+        cursor: pointer;
+    }
+}
