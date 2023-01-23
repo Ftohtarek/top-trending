@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
 
-Demo [CimaTrending](https://ftohtarek.githup.io/top-trending/)
+Demo [CimaTrending](https://ftohtarek.github.io/top-trending/)
 
 movie and tvshow web application.
 
