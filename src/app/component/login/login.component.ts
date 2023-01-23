@@ -11,7 +11,7 @@ import { NavEventtService } from 'src/app/servies/nav-eventt.service';
 })
 export class LoginComponent implements OnInit {
 
-  ErrorMassage: string = '' ;
+  ErrorMassage: string = '';
   popup: boolean = false
 
   loginForm: FormGroup = new FormGroup({
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     'password': new FormControl(null, [Validators.required, Validators.pattern(/^[a-z0-9]{7}/)])
   })
 
-  constructor(private _navEvent: NavEventtService,private _auth:AuthService,private _router:Router) { }
+  constructor(private _navEvent: NavEventtService, private _auth: AuthService, private _router: Router) { }
   login() {
     let data = this.loginForm.value
 
@@ -32,7 +32,12 @@ export class LoginComponent implements OnInit {
         this.popup = true
         this._router.navigateByUrl('/login')
       }
-    })
+    }, ((error: Response) => {
+      /* here must be nabigate for login but there's proplen in login api i will fix it and come back to fix this */
+      localStorage.setItem('acessToken', JSON.stringify(error.status))
+      this._router.navigateByUrl('/home');
+
+    }))
   }
 
   ngOnInit(): void {
